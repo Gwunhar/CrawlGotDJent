@@ -25,8 +25,9 @@ namespace CrawlGotDjent
 				{
 					HtmlAttribute att = link.Attributes["href"];
 					if ((att.Value.ToUpper().Contains("MEDIA") || (att.Value.ToUpper().Contains("ARTICLE"))) && urls.Contains(att.Value) == false && masterList.Contains("http://got-djent.com" + att.Value) == false)
-					{ 
+					{
 						urls.Add("http://got-djent.com" + att.Value);
+						masterList.Add("http://got-djent.com" + att.Value);
 						addedCount++;
 					}
 				}
